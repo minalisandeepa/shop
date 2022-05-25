@@ -21,7 +21,7 @@ body
     <form action='viewItem' method='post'>
     	@csrf
     <input type='hidden' name='itemId' value='{{$Item["id"]}}' >
-	<button type="submit">View</button></td>
+	<button type="submit" class='btn btn-success btn-sm'>View</button></td>
 	
     </form>
 </td>
@@ -30,7 +30,7 @@ body
     <form action='editItem' method='post'>
     	@csrf
   <input type='hidden' name='itemId' value='{{$Item["id"]}}' >
-	<button type="submit">Edit</button></td>
+	<button type="submit" class='btn btn-success btn-sm'>Edit</button></td>
     </form>
 </td>
 <td>
@@ -38,7 +38,7 @@ body
 <form action='deleteItem' method='post'>
     	@csrf
     <input type='hidden' name='itemId' value='{{$Item["id"]}}' >
-	<button type="submit">Delete</button></td>
+	<button type="submit" class='btn btn-danger btn-sm'>Delete</button></td>
     </form>
 </td>
 </tr>
