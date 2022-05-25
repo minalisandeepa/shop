@@ -19,6 +19,6 @@ body
 	<table>
 		<tr><td> Name </td><td><input type="text" Name="name" value={{$item['Name']}}></td></tr>
 <tr><td> Price </td><td><input type="text" Name="price" value={{$item['Price']}}></td></tr>
-<tr><td><button type="submit" >Update</button></td></tr>
+<tr><td><button type="submit" class='btn btn-success'>Update</button></td></tr>
 	</table>
 </form>
