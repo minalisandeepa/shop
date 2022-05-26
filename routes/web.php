@@ -36,7 +36,7 @@ Route::post('/editItem', [itemController::class, 'editItem']);
 Route::post('/updateItem', [itemController::class, 'updateItem']);
 Route::post('/deleteItem', [itemController::class, 'deleteItem']);
 Route::post('/viewItem', [itemController::class, 'viewItem']);
-
+Route::post('/search',[itemController::class,'search']);
 
 
 

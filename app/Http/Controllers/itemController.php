@@ -80,6 +80,15 @@ public function viewItem(Request $request)
  return view('viewItem', ['item' => $item ]);
 }
 
+public function search(Request $req)
+{
+    
+  $x = Item::where('Name','Like','%'.$req->sText.'%')->
+            orwhere('Price',$req->sText)->
+            get();
+    return view('items',['items'=>$x]);
+    }
+
 
 }
 

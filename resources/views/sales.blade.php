@@ -1,47 +1,42 @@
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css">
- 
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ </head>
   <style>
 body 
 {
   background-color: lightgray;
 }
-
-
   font-family: Arial, Helvetica, sans-serif;
 }
 
- 
-
-/* Style the search box */
-#mySearch {
-  width: 15%;
-  font-size: 14px;
-  padding: 2px;
-  border: 3px solid #ddd;
-}
-
 </style>
-
-</head>
 <body>
-  <div class="content">
-  <span class="glyphicon glyphicon-search"></span>
+ <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Search Item</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/items">Items</a></li>
+      <li><a href="/grades">Grades</a></li>
+      <li><a href="api/users">Users</a></li>
+    </ul>
+  </div> 
 </div>
-  <div class="row">
-  <div class="left" >
-    <h5>Search</h5>
-    <input type="text"placeholder="Find.." title="Type in a category">
-    
+</nav>
+<div class="input-group">
+  <div id="search-autocomplete" class="form-outline">
   </div>
 </div>
 
-
-
 <a href="newSale">New Sale </a><br>
 
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 <table class="table table-bordered">
 <tr><th>Name</th><th>Quantity</th><th>Price</th><th>Value</th></tr>
 @foreach($sales as $sale)

@@ -11,7 +11,10 @@ body
 }
 </style>
 <a href="newItem">New Item </a><br>
-
+<form action="search" method="POST">
+  @csrf<input type="text" name="sText" class="form-control-sm" placeholder="Name or Price">
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
 <table>
 <tr><th>Name</th><th>Price</th></tr>
 @foreach($items as $Item)
