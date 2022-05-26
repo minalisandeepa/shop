@@ -95,20 +95,12 @@ public function viewSale(Request $request)
 }
 
 
-public function search()
+public function search(Request $req)
 {
-
     
-    try{
-     $sales=Sale::with('item')->get();
-          // dd($x);
-     return view('sales', ['sales' => $sales ]);
- }
- catch(\Exception $e)
- {
-    return $e->getMessage();
-}
-
+  $x = Sale::where('Quantity',$req->sText)->
+            get();
+    return view('sales',['sales'=>$x]);
 }
 
 

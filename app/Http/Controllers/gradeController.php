@@ -80,5 +80,13 @@ public function viewGrade(Request $request)
         return view('viewGrade', ['grade' => $grade ]);
     }
 
+public function search(Request $req)
+{
+    
+  $x = Grade::where('Subject','Like','%'.$req->sText.'%')->
+            orwhere('Result',$req->sText)->
+            get();
+    return view('grades',['grades'=>$x]);
+    }
 
 }

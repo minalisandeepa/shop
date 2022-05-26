@@ -15,28 +15,15 @@ body
 
 </style>
 <body>
- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Search Item</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="/items">Items</a></li>
-      <li><a href="/grades">Grades</a></li>
-      <li><a href="api/users">Users</a></li>
-    </ul>
-  </div> 
+ <div>
+ @extends("menu")
 </div>
-</nav>
-<div class="input-group">
-  <div id="search-autocomplete" class="form-outline">
-  </div>
-</div>
-
+<div>
 <a href="newSale">New Sale </a><br>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<form action="search" method="POST">
+  @csrf<input type="text" name="sText" class="form-control-sm" placeholder="Quantity">
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
 <table class="table table-bordered">
 <tr><th>Name</th><th>Quantity</th><th>Price</th><th>Value</th></tr>
 @foreach($sales as $sale)
@@ -76,4 +63,5 @@ body
 </tr>
 @endforeach
 </table>
+</div>
 </body>

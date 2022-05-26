@@ -50,7 +50,7 @@ Route::post('/editGrade', [gradeController::class, 'editGrade']);
 Route::post('/updateGrade', [gradeController::class, 'updateGrade']);
 Route::post('/deleteGrade', [gradeController::class, 'deleteGrade']);
 Route::post('/viewGrade', [gradeController::class, 'viewGrade']);
-
+Route::post('/search',[gradeController::class,'search']);
 
 
 
@@ -65,6 +65,7 @@ Route::post('/editSale', [saleController::class, 'editSale']);
 Route::post('/updateSale', [saleController::class, 'updateSale']);
 Route::post('/deleteSale', [saleController::class, 'deleteSale']);
 Route::post('/viewSale', [saleController::class, 'viewSale']);
+Route::post('/search',[saleController::class,'search']);
 
 
 

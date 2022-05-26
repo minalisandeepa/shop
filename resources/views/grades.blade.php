@@ -11,7 +11,10 @@ body
 }
 </style>
 <a href="newGrade">New Grade </a><br>
-
+<form action="search" method="POST">
+  @csrf<input type="text" name="sText" class="form-control-sm" placeholder="Subject or Result">
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
 
 <table>
 <tr><th>Subject</th><th>Result</th></tr>
