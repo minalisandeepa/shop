@@ -24,7 +24,7 @@ public function index()
     
     try{
      $sales=Sale::with('item')->get();
-          // dd($x);
+        // dd($sales);
      return view('sales', ['sales' => $sales ]);
  }
  catch(\Exception $e)
@@ -50,8 +50,8 @@ public function saveSale(Request $request)
     $sale->Quantity = $request->quantity;
     $sale->save();
 
-    $x=Sale::All();
-    return view('sales', ['sales' => $x ])->with('item');
+    $x=Sale::with('item')->get();
+    return view('sales', ['sales' => $x ]);
 }
 
 public function editSale(Request $request)

@@ -1,21 +1,21 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="bootstrap-5.0.2/dist/css/bootstrap.min.css">
- 
   <style>
 body 
-
 {
   background-color: lightslategray;
 }
 </style>
+<body>
+ <div>
+ @include("menu")
+</div>
+<div>
 <a href="newItem">New Item </a><br>
 <form action="search" method="POST">
   @csrf<input type="text" name="sText" class="form-control-sm" placeholder="Name or Price">
   <button type="submit" class="btn btn-primary">Search</button>
 </form>
-<table>
+<table class="table table-bordered">
 <tr><th>Name</th><th>Price</th></tr>
 @foreach($items as $Item)
 <tr><td>{{$Item['Name']}} </td><td> {{$Item['Price']}} </td>
@@ -34,6 +34,7 @@ body
     	@csrf
   <input type='hidden' name='itemId' value='{{$Item["id"]}}' >
 	<button type="submit" class='btn btn-success btn-sm'>Edit</button></td>
+
     </form>
 </td>
 <td>
